@@ -1,3 +1,5 @@
+/* TODO -- REDESIGN THE LAYOUT FOR MOBILE DEVICES */
+
 :root {
     box-sizing: border-box;
 }
@@ -14,18 +16,31 @@ body {
     margin: 0;
 }
 
+/* LAYOUT */
+/* ----------------------------------------------------------- */
 #app {
     height: 100vh;
     width: 100vw;
 }
 
-/* Grid */
+/* Grid Container */
 .main-grid {
     display: grid;
     grid-template-rows: repeat(10, auto);
     row-gap: 0.2em;
 }
 
+/* Grid Item of main grid */
+.top-block {
+    grid-column: 1 / 4;
+    grid-row: span 1;
+
+    background-color: rgb(10, 6, 6);
+    color: white;
+    padding: 2em;
+}
+
+/* Grid Item and Container  */
 .sub-grid {
     grid-column: 1 / 4;
     grid-row: span 8;
@@ -34,6 +49,16 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1;
     column-gap: 0.2em;
+}
+
+/* Grid Item of main grid */
+.bottom-block {
+    grid-column: 1 / 4;
+    grid-row: span 1;
+
+    background-color: gray;
+    color: black;
+    padding: 2em;
 }
 
 @media (min-width: 39.375em) and (max-width: 50em) {
@@ -47,12 +72,20 @@ body {
         gap: 0.2em;
     }
 
+    /* Grid item */
     .block-a {
         grid-row: span 2;
     }
 }
 
+/* Mobile Devices - mobile phones */
+/* Change the layout so the grid fits the screen, no scrolling */
 @media (max-width: 39.374em) {
+    .top-block {
+        grid-column: 1 / 4;
+        grid-row: span 2;
+    }
+
     .sub-grid {
         grid-column: 1 / 4;
         grid-row: span 8;
@@ -66,17 +99,13 @@ body {
     .block-a {
         grid-column: span 2;
     }
+    
+    .buttom-block {
+        grid-column: 1 / 4;
+        grid-row: span 2;
+    }
 }
 
-
-.top-block {
-    grid-column: 1 / 4;
-    grid-row: span 1;
-
-    background-color: rgb(10, 6, 6);
-    color: white;
-    padding: 2em;
-}
 
 .block {
     background-color: green;
@@ -88,11 +117,124 @@ body {
     margin-left: 0;
 }
 
-.bottom-block {
-    grid-column: 1 / 4;
-    grid-row: span 1;
 
-    background-color: gray;
-    color: black;
-    padding: 2em;
+/* AUDIO CONTROLS */
+/* ----------------------------------------------------------- */
+
+/* Grid container */
+.block-b {
+    background-color: white;
+
+    display: grid;
+}
+
+/*  Grid item */
+.audio-controls {
+    justify-self: center;
+    align-self: center;
+}
+
+.audio-btn {
+    display: block;
+    margin: 0;
+    border: none;
+    width: 6em;
+    padding: 1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.play-btn {
+    background-color: green;
+}
+
+.pause-btn {
+    background-color: rgba(255, 255, 0, 0.747);
+    margin: 0.2em 0;
+}
+
+.stop-btn {
+    background-color: rgba(255, 0, 0, 0.637);
+}
+
+
+/* INTERFACE CONTROLS */
+/* ----------------------------------------------------------- */
+.block-c {
+    display: grid;
+
+    background-color: whitesmoke;
+}
+
+.interface-controls {
+    justify-self: center;
+    align-self: center;
+}
+
+.interface-btn {
+    display: block;
+    padding: 1em;
+    border: none;
+    width: 7em;
+    font-weight: bold;
+    background-color: rgb(54, 52, 53);
+    color: white;
+
+    box-shadow: 0.2em 0.2em 0.2em rgb(10, 6, 6),
+                inset 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+}
+
+@media (min-width: 50.0626em) {
+    .interface-btn {
+        width: 12em;
+        padding: 2em 1em;
+    }
+}
+
+@media (min-width: 39.375em) and (max-width: 50.0625em){
+    .interface-btn {
+        width: 12em;
+        padding: 1.2em 1em;
+    }
+
+    .select-audio-btn {
+        margin: 1.5em 0;
+    }
+}
+
+@media (min-width: 28.125em) and (max-width: 39.374em){
+    .interface-btn {
+        width: 12em;
+        padding: 1.2em 1em;
+    }
+
+    .select-audio-btn {
+        margin: 1.5em 0;
+    }
+}
+
+.bg-change-btn {
+
+}
+
+.select-audio-btn {
+    margin: 3em 0;
+}
+
+.change-name-btn {
+
+}
+
+/* TOP BLOCK */
+/* ----------------------------------------------------------- */
+
+.top-block {
+    display: grid;
+}
+
+.welcome-area {
+    justify-self: center;
+    align-self: center;
 }

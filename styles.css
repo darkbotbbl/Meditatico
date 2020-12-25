@@ -1,240 +1,233 @@
-/* TODO -- REDESIGN THE LAYOUT FOR MOBILE DEVICES */
-
+/* Base rules */
 :root {
     box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
+::before,
+::after {
     box-sizing: inherit;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    padding: 0;
+    font-family: Helvetica, sans-serif, Arial;
     margin: 0;
+    padding: 0;
 }
 
-/* LAYOUT */
-/* ----------------------------------------------------------- */
-#app {
-    height: 100vh;
-    width: 100vw;
+/* Temporary background colors to distinguish between blocks */
+.main-grid {
+    background: wheat;
 }
 
-/* Grid Container */
+.top-block {
+    background-color: orange;
+}
+.sub-grid {
+    background-color: purple;
+}
+.block {
+    background-color: whitesmoke;
+}
+.bottom-block {
+    background-color: green;
+}
+
+/* GENERAL LAYOUT CUM DESKTOP LAYOUT */
+
+/* main grid container */
 .main-grid {
     display: grid;
-    grid-template-rows: repeat(10, auto);
-    row-gap: 0.2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 10vh);
 }
 
-/* Grid Item of main grid */
+/* gird item of main grid */
 .top-block {
-    grid-column: 1 / 4;
-    grid-row: span 1;
-
-    background-color: rgb(10, 6, 6);
-    color: white;
-    padding: 2em;
+    grid-column: 1fr;
+    grid-row: span 2;
 }
 
-/* Grid Item and Container  */
+/* grid item of main grid */
+/* grid container of the blocks */
 .sub-grid {
-    grid-column: 1 / 4;
-    grid-row: span 8;
+    grid-column: 1fr;
+    grid-row: span 6;
 
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1;
-    column-gap: 0.2em;
+    grid-template-columns:  1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.1em;
 }
 
-/* Grid Item of main grid */
-.bottom-block {
-    grid-column: 1 / 4;
-    grid-row: span 1;
-
-    background-color: gray;
-    color: black;
-    padding: 2em;
-}
-
-@media (min-width: 39.375em) and (max-width: 50em) {
-    .sub-grid {
-        grid-column: 1 / 4;
-        grid-row: span 8;
-        
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 0.2em;
-    }
-
-    /* Grid item */
-    .block-a {
-        grid-row: span 2;
-    }
-}
-
-/* Mobile Devices - mobile phones */
-/* Change the layout so the grid fits the screen, no scrolling */
-@media (max-width: 39.374em) {
-    .top-block {
-        grid-column: 1 / 4;
-        grid-row: span 2;
-    }
-
-    .sub-grid {
-        grid-column: 1 / 4;
-        grid-row: span 8;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr 1fr;
-        gap: 0.2em;
-    }
-
-    .block-a {
-        grid-column: span 2;
-    }
-    
-    .buttom-block {
-        grid-column: 1 / 4;
-        grid-row: span 2;
-    }
-}
-
-
-.block {
-    background-color: green;
-    color: white;
-    padding: 2em;
-}
-
-.block:nth-child(1) {
-    margin-left: 0;
-}
-
-
-/* AUDIO CONTROLS */
-/* ----------------------------------------------------------- */
-
-/* Grid container */
-.block-b {
-    background-color: white;
-
-    display: grid;
-}
-
-/*  Grid item */
-.audio-controls {
-    justify-self: center;
-    align-self: center;
-}
-
-.audio-btn {
-    display: block;
-    margin: 0;
-    border: none;
-    width: 6em;
-    padding: 1em;
-    font-size: 1.2rem;
+.btn {
+    font-size: 1.1rem;
     font-weight: bold;
-    cursor: pointer;
+    width: 22vw;
+    padding: 1.5em;
+    border-radius: 0.5em;
+
+    box-shadow: 0.3em 0.3em 0.2em rgb(0, 0, 0), 
+                inset 0.2em 0.2em 0.2em 0.2em rgba(255, 255, 255, 0.2),
+                inset -0.2em -0.2em 0.2em 0.2em rgba(255, 255, 255, 0.2); 
 }
 
-.play-btn {
-    background-color: green;
+.btn:hover {
+    color: green;
 }
 
 .pause-btn {
-    background-color: rgba(255, 255, 0, 0.747);
-    margin: 0.2em 0;
-}
-
-.stop-btn {
-    background-color: rgba(255, 0, 0, 0.637);
-}
-
-
-/* INTERFACE CONTROLS */
-/* ----------------------------------------------------------- */
-.block-c {
-    display: grid;
-
-    background-color: whitesmoke;
-}
-
-.interface-controls {
-    justify-self: center;
-    align-self: center;
-}
-
-.interface-btn {
-    display: block;
-    padding: 1em;
-    border: none;
-    width: 7em;
-    font-weight: bold;
-    background-color: rgb(54, 52, 53);
-    color: white;
-
-    box-shadow: 0.2em 0.2em 0.2em rgb(10, 6, 6),
-                inset 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
-    border-radius: 0.5em;
-}
-
-@media (min-width: 50.0626em) {
-    .interface-btn {
-        width: 12em;
-        padding: 2em 1em;
-    }
-}
-
-@media (min-width: 39.375em) and (max-width: 50.0625em){
-    .interface-btn {
-        width: 12em;
-        padding: 1.2em 1em;
-    }
-
-    .select-audio-btn {
-        margin: 1.5em 0;
-    }
-}
-
-@media (min-width: 28.125em) and (max-width: 39.374em){
-    .interface-btn {
-        width: 12em;
-        padding: 1.2em 1em;
-    }
-
-    .select-audio-btn {
-        margin: 1.5em 0;
-    }
-}
-
-.bg-change-btn {
-
+    margin: 1em 0;
 }
 
 .select-audio-btn {
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
-.change-name-btn {
-
+/* center alignment */
+.section-heading {
+    text-align: center;
+    font-family: cursive;
 }
 
-/* TOP BLOCK */
-/* ----------------------------------------------------------- */
-
-.top-block {
+.block {
     display: grid;
 }
 
-.welcome-area {
-    justify-self: center;
+.audio-controls {
     align-self: center;
+    justify-self: center;
+}
+
+.interface-controls {
+    align-self: center;
+    justify-self: center;
+}
+
+/* grid item of main grid */
+.bottom-block {
+    grid-column: 1fr;
+    grid-row: span 2;
+}
+
+/* MOBILE LAYOUT */
+
+/* <850px, >600px */
+@media (min-width: 37.5em) and (max-width: 53.125em) {
+    .section-heading {
+        display: none;
+    }
+
+    
+    .top-block {
+        grid-row: span 2;
+    }
+
+    .sub-grid {
+        grid-row: span 6;
+
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .block-a {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .block-b {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+
+    .block-c {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .bottom-block {
+        grid: span 2;
+    }
+
+    .btn {
+        width: 30vw;
+        padding: 0.8em 1em;
+        border-radius: 0.5em;
+    }
+
+    .pause-btn {
+        margin: 0.5em 0;
+    }
+
+    .select-audio-btn {
+        margin: 0.5em 0;
+    }
+}
+
+/* <600px */
+@media (max-width: 37.49em) {
+    .section-heading {
+        display: none;
+    }
+    
+    .top-block {
+        grid-row: span 2;
+    }
+
+    .sub-grid {
+        grid-row: span 6;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .block-a {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .block-b {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .block-c {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .bottom-block {
+        grid: span 2;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        width: 45vw;
+        padding: 0.5em 1.5em;
+        border-radius: 0.5em;
+    }
+
+    .pause-btn {
+        margin: 0.5em 0;
+    }
+
+    .select-audio-btn {
+        margin: 0.5em 0;
+    }
+
+}
+
+
+/* GENERAL */
+
+.btn {
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: whitesmoke;
+    display: block;
+}
+
+.btn:focus {
+    outline: none;
 }

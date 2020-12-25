@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Meditatico - a simple meditation app for everyone</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Meditatico - a simple meditation app for everyone</title>
 </head>
 <body>
-    
-    <div id="app" class="main-grid">
-        <!-- The Top Block having the welcome note and name-->
-        <div class="top-block">
-            <div class="welcome-area">
-                <h1 class="message"><span class="name">Username, </span>Are you ready to meditate?</h1>
-            </div>
-        </div>
+	
+	<div id="app" class="main-grid">
+		<!-- The Top Block having the welcome note and name-->
+		<div class="top-block">
+			<div class="welcome-area">
+				<p class="message"><span class="name">Username, </span>Are you ready to meditate?</p>
+			</div>
+		</div>
 
-        <div class="sub-grid">
-            <!-- the timer -->
-            <div class="block block-a">
-                Timer and Audio Name
-            </div>
-            <!-- the audio controls -->
-            <div class="block block-b">
-                <!-- Add icons to the audio control buttons -->
-                <div class="audio-controls">
-                    <button class="audio-btn play-btn">Play</button>
-                    <button class="audio-btn pause-btn">Pause</button>
-                    <button class="audio-btn stop-btn">Stop</button>
-                </div>
-            </div>
-            <!-- the interface controls -->
-            <div class="block block-c">
-                <!--  -->
-                <div class="interface-controls">
-                    <button class="interface-btn bg-change-btn">Change Background</button>
-                    <button class="interface-btn select-audio-btn">Choose Audio</button>
-                    <button class="interface-btn change-name-btn">Change Name</button>
-                </div>
-            </div>
-        </div>
+		<div class="sub-grid">
+			<!-- the audio controls -->
+			<div class="block block-a">
+				<!-- Add icons to the audio control buttons -->
+				<div class="audio-controls">
+					<h3 class="section-heading">Audio Controls</h3>
 
-        <!-- The Bottom Block having the quote -->
-        <div class="bottom-block">
-            Bottom Block
-        </div>
+					<button class="btn audio-btn play-btn">Play</button>
+					<button class="btn audio-btn pause-btn">Pause</button>
+					<button class="btn audio-btn stop-btn">Stop</button>
+				</div>
+			</div>
+			<!-- the timer -->
+			<div class="block block-b">
+				<h2>Timer and Audio Information</h2>
+			</div>
+			<!-- the interface controls -->
+			<div class="block block-c">
+				<div class="interface-controls">
+					<h3 class="section-heading">Interface Controls</h3>
 
-    </div>
+					<button class="btn interface-btn bg-change-btn">Change Background</button>
+					<button class="btn interface-btn select-audio-btn">Choose Audio</button>
+					<button class="btn interface-btn change-name-btn">Change Name</button>
+				</div>
+			</div>
+		</div>
 
-    <script src="./main.js"></script>
+		<!-- The Bottom Block having the quote -->
+		<div class="bottom-block">
+			<blockquote class="quote">Voluptatum illum ab earum recusandae officia consequatur deleniti libero ut voluptatibus, deserunt, officiis nam nisi numquam magni?</blockquote>
+		</div>
+
+	</div>
+
+	<script src="./main.js"></script>
 
 </body>
 </html>

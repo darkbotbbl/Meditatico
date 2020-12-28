@@ -171,11 +171,11 @@ body {
     }
     
     .top-block {
-        grid-row: span 2;
+        grid-row: span 1;
     }
 
     .sub-grid {
-        grid-row: span 6;
+        grid-row: span 7;
 
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2fr 1fr;
@@ -203,7 +203,7 @@ body {
     .btn {
         font-size: 0.9rem;
         width: 45vw;
-        padding: 0.5em 1.5em;
+        padding: 0.8em 1.5em;
         border-radius: 0.5em;
     }
 
